@@ -6,6 +6,6 @@ namespace Stinex
 {
     interface IWifiConnector
     {
-        void ConnectToWifi(string ssid, string password);
+        void ConnectToWifi(string ssidd, string password);
     }
 }
