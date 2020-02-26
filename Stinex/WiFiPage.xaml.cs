@@ -71,10 +71,10 @@ namespace Stinex
                         }
                         response.Close();
                         */
-            var client = new RestClient("http://192.168.7.239/index.php");
+            var client = new RestClient(path.Text);
             // client.Authenticator = new HttpBasicAuthenticator(username, password);
             var request = new RestRequest("resource/{id}");
-            request.AddParameter("id", "Hello");
+            request.AddParameter(name.Text, value.Text);
             
             var response = client.Post(request);
             var content = response.Content; // raw content as string

@@ -46,7 +46,7 @@ namespace Stinex
         }
         private async void BadLogOrPassAnimation(object sender)
         {
-            CrossLocalNotifications.Current.Show("title", "body", 101, DateTime.Now.AddSeconds(10));
+           // CrossLocalNotifications.Current.Show("title", "body", 101, DateTime.Now.AddSeconds(10));
             MyVibration();
             uint timeout = 50;
 
