@@ -37,6 +37,15 @@
 					BackgroundColor="White"
 					HorizontalOptions="Center"
 					Clicked="ConnectClicked"/>
+            <Button x:Name="NextCon" 
+                    Text="Connection" 
+					FontFamily="Myriad Pro"
+					WidthRequest="180"                    
+					BorderColor="Black"
+					BorderRadius="6"
+					BackgroundColor="White"
+					HorizontalOptions="Center"
+					Clicked="NextCon_Clicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
