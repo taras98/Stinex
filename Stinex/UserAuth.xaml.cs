@@ -42,7 +42,7 @@ namespace Stinex
         async void OnButtonClicked(object sender, EventArgs e)
         {
             BadLogOrPassAnimation(sender);
-            await Navigation.PushAsync(new WiFiPage());
+            await Navigation.PushAsync(new ControlPage("5C:CF:7F:3C:FF:E6"));
         }
         private async void BadLogOrPassAnimation(object sender)
         {

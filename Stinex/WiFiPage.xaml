@@ -3,49 +3,62 @@
 			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 			 xmlns:d="http://xamarin.com/schemas/2014/forms/design"
 			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-			 mc:Ignorable="d"
-			 x:Class="Stinex.WiFiPage">
+             xmlns:Editor="clr-namespace:Stinex"
+             mc:Ignorable="d"
+			 x:Class="Stinex.WiFiPage" Title="Configuration">
     <ContentPage.Content>
         <StackLayout>
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="5*" />
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />
                     <RowDefinition Height="*" />
                     <RowDefinition Height="*" />
+                    <RowDefinition Height="2*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
-                <Label Text="Path" TextColor="Red"  Grid.Column="0" Grid.Row="0"/>
-                <Label Text="Name" TextColor="Red"  Grid.Column="0" Grid.Row="1"/>
-                <Label Text="Value" TextColor="Red" Grid.Column="0" Grid.Row="2" />
-                <Editor x:Name="path" Text="http://192.168.7.239/index.php" Grid.Column="1" Grid.Row="0"/>
-                <Editor x:Name="name" Grid.Column="1" Grid.Row="1"/>
-                <Editor x:Name="value" Grid.Column="1" Grid.Row="2" />
-
-
+                <Label Text="Step 1. Please connect to Stinex Wi-Fi network and press the following button" TextColor="Red"  Grid.Column="0" Grid.Row="0" MaxLines="3"/>
+                <Button x:Name="StinexConnect" 
+                        Text="Check connection" 
+					    FontFamily="Myriad Pro"
+					    WidthRequest="180"                    
+					    BorderColor="Black"
+					    BorderRadius="6"
+					    BackgroundColor="White"
+					    HorizontalOptions="Center"
+					    Clicked="ConnectClicked"
+                        Grid.Column="0" Grid.Row="1"/>
+                <Label Text="Step 2. If your Wi-Fi network exists in the list bellow type ssid and password in respective fields, disconnect from Stinex Wi-Fi and press following button" TextColor="Red"  Grid.Column="0" Grid.Row="2"  MaxLines="3"/>
+                <Grid Grid.Column="0" Grid.Row="3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="4*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Label Text="SSID:" Grid.Column="0" Grid.Row="0"/>
+                    <Label Text="Password:" Grid.Column="0" Grid.Row="1"/>
+                    <Editor x:Name="ssid" Grid.Column="1" Grid.Row="0"/>
+                    <Editor:MyEntry x:Name="password" IsPassword="True" Grid.Column="1" Grid.Row="1"/>
+                </Grid>
+                <Button x:Name="SendCredentials" 
+                        Text="Apply" 
+					    FontFamily="Myriad Pro"
+					    WidthRequest="180"                    
+					    BorderColor="Black"
+					    BorderRadius="6"
+					    BackgroundColor="White"
+					    HorizontalOptions="Center"
+                        Clicked="NextCon_Clicked"
+                        Grid.Column="0" Grid.Row="4" />
+                <Editor x:Name="wifilist" Grid.Column="0" Grid.Row="5" IsEnabled="False"/>
             </Grid>
-            
 
-            <Button x:Name="Con" 
-                    Text="Connection" 
-					FontFamily="Myriad Pro"
-					WidthRequest="180"                    
-					BorderColor="Black"
-					BorderRadius="6"
-					BackgroundColor="White"
-					HorizontalOptions="Center"
-					Clicked="ConnectClicked"/>
-            <Button x:Name="NextCon" 
-                    Text="Connection" 
-					FontFamily="Myriad Pro"
-					WidthRequest="180"                    
-					BorderColor="Black"
-					BorderRadius="6"
-					BackgroundColor="White"
-					HorizontalOptions="Center"
-					Clicked="NextCon_Clicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

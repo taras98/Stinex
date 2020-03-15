@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Stinex.ControlPage"
+             Title="Control">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="2*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Label Text="Room temp" TextColor="Red"  Grid.Column="0" Grid.Row="0"/>
+                <Label Text="Panel temp" TextColor="Red"  Grid.Column="0" Grid.Row="1"/>
+                <Label Text="Heat status" TextColor="Red"  Grid.Column="0" Grid.Row="2"/>
+                <Label x:Name="room" Text="" TextColor="Red"  Grid.Column="1" Grid.Row="0"/>
+                <Label x:Name="panel" Text="" TextColor="Red"  Grid.Column="1" Grid.Row="1"/>
+                <Label x:Name="status" Text="" TextColor="Red"  Grid.Column="1" Grid.Row="2"/>
+            </Grid>
+            <Button x:Name="refreshBtn" 
+                        Text="Refresh" 
+					    FontFamily="Myriad Pro"
+					    WidthRequest="180"                    
+					    BorderColor="Black"
+					    BorderRadius="6"
+					    BackgroundColor="White"
+					    HorizontalOptions="Center"
+                        Clicked="refreshBtn_Clicked"/>
+            <Label Text="NEW VALUES" HorizontalOptions="Center" TextColor="Red"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="2*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Label Text="New Room temp" TextColor="Red"  Grid.Column="0" Grid.Row="0"/>
+                <Label Text="New Panel temp" TextColor="Red"  Grid.Column="0" Grid.Row="1"/>
+                <Label Text="New Heat status" TextColor="Red"  Grid.Column="0" Grid.Row="2"/>
+                <Editor x:Name="newroom" Text=""   Grid.Column="1" Grid.Row="0"/>
+                <Editor x:Name="newpanel" Text=""   Grid.Column="1" Grid.Row="1"/>
+                <Editor x:Name="newstatus" Text=""   Grid.Column="1" Grid.Row="2"/>
+            </Grid>
+            <Button x:Name="sendBtn" 
+                        Text="Send" 
+					    FontFamily="Myriad Pro"
+					    WidthRequest="180"                    
+					    BorderColor="Black"
+					    BorderRadius="6"
+					    BackgroundColor="White"
+					    HorizontalOptions="Center"
+                        Clicked="sendBtn_Clicked"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
